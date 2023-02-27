@@ -18,7 +18,6 @@ public class BookServlet extends HttpServlet {
         var books = bookService.getBooks();
 
         req.setAttribute("books", books);
-        System.out.println("hj;");
 
         req.getRequestDispatcher("/WEB-INF/jsp/book.jsp").forward(req, resp);
 
