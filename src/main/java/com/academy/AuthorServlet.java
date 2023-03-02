@@ -22,16 +22,13 @@ public class AuthorServlet extends HttpServlet {
         writer.println("<html>");
         writer.println("<body>");
 
+        var authorService = new AuthorService();
 
-            var authorService = new AuthorService();
+        authorService.getAuthors().forEach(author -> {
+            writer.println(author.getName());
+            writer.println("<br>");
 
-            authorService.getAuthors().forEach(author-> {
-                writer.println(author.getName());
-                writer.println("<br>");
-
-            });
-
-
+        });
 
         writer.println("</body>");
         writer.println("</html>");
